@@ -47,7 +47,7 @@
     // "baseUrl": "./",                             /* Base directory to resolve non-absolute module names. */
     "baseUrl": ".",
     "paths": {
-      "@emmental/mobile-v4-shared": [
+      "shared": [
         "../shared/src/index.ts"
       ]
     },                                 /* A series of entries which re-map imports to lookup locations relative to the 'baseUrl'. */
