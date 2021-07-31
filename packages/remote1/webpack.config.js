@@ -186,7 +186,7 @@ module.exports = function config(env, options) {
     contentBase: path.resolve(__dirname, 'public'),
     compress: true,
     historyApiFallback: { disableDotRule: true },
-    port: 4002,
+    port: 4001,
     hot: true
   };
 
