@@ -5,6 +5,7 @@ const TerserPlugin = require('terser-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const InlineChunkHtmlPlugin = require('inline-chunk-html-plugin');
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
+const { ModuleFederationPlugin } = require('webpack').container;
 
 require('@babel/register')({ extensions: ['.ts'], cache: false });
 
@@ -159,7 +160,24 @@ module.exports = function config(env, options) {
           ]
         }),
       isDevServer && new webpack.HotModuleReplacementPlugin(),
-      isDevServer && new ReactRefreshWebpackPlugin()
+      isDevServer && new ReactRefreshWebpackPlugin(),
+      new ModuleFederationPlugin({
+        name: 'host',
+        remotes: {
+          remote1: `remote1@${getRemoteEntryUrl(4001)}`,
+          remote2: `remote2@${getRemoteEntryUrl(4002)}`
+        },
+        shared: {
+          react: { singleton: true },
+          'react-dom': { singleton: true },
+          recoil: { singleton: true },
+          shared: {
+            import: '../shared/src/index',
+            requiredVersion: require('../shared/package.json').version,
+            singleton: true
+          }
+        }
+      })
     ].filter(Boolean)
   };
 
