@@ -1,4 +1,6 @@
 {
   "name": "module-federation",
-  "packageManager": "yarn@3.0.0"
+  "packageManager": "yarn@3.0.0",
+  "author": "hoondeveloper <hoonskyn9@gmail.com>",
+  "license": "MIT"
 }
