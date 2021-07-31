@@ -1,7 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const TerserPlugin = require('terser-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const InlineChunkHtmlPlugin = require('inline-chunk-html-plugin');
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
@@ -47,40 +46,6 @@ module.exports = function config(env, options) {
     },
 
     devtool: isEnvProduction ? 'source-map' : 'cheap-module-source-map',
-
-    optimization: {
-      minimize: isEnvProduction,
-      minimizer: [
-        new TerserPlugin({
-          terserOptions: {
-            parse: { ecma: 8 },
-            compress: {
-              ecma: 5,
-              warnings: false,
-              comparisons: false,
-              inline: 2
-            },
-            mangle: { safari10: true },
-            keep_classnames: isEnvProductionProfile,
-            keep_fnames: isEnvProductionProfile,
-            output: { ecma: 5, comments: false, ascii_only: true }
-          }
-        })
-      ],
-      splitChunks: {
-        chunks: 'all',
-        cacheGroups: {
-          commons: {
-            test: /[\\/].yarn[\\/]/,
-            name: 'vendors',
-            chunks: 'all'
-          }
-        }
-      },
-      runtimeChunk: {
-        name: (entrypoint) => `runtime-${entrypoint.name}`
-      }
-    },
 
     performance: {
       maxAssetSize: 650 * 1024,
@@ -171,7 +136,6 @@ module.exports = function config(env, options) {
         shared: {
           react: { singleton: true },
           'react-dom': { singleton: true },
-          recoil: { singleton: true },
           shared: {
             import: '../shared/src/index',
             requiredVersion: require('../shared/package.json').version,
@@ -192,7 +156,3 @@ module.exports = function config(env, options) {
 
   return isDevServer ? { ...appConfig, devServer } : [appConfig];
 };
-
-function getRemoteEntryUrl(port) {
-  return `//localhost:${port}/remoteEntry.js`;
-}
