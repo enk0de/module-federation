@@ -5902,6 +5902,7 @@ fsevents@~2.3.2:
     eslint-config-prettier: ^8.3.0
     eslint-plugin-prettier: ^3.4.0
     prettier: ^2.3.2
+    typescript: ^4.3.5
   languageName: unknown
   linkType: soft
 
@@ -8101,7 +8102,7 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-typescript@^4.2.4:
+"typescript@^4.2.4, typescript@^4.3.5":
   version: 4.3.5
   resolution: "typescript@npm:4.3.5"
   bin:
@@ -8111,7 +8112,7 @@ typescript@^4.2.4:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@^4.2.4#~builtin<compat/typescript>":
+"typescript@patch:typescript@^4.2.4#~builtin<compat/typescript>, typescript@patch:typescript@^4.3.5#~builtin<compat/typescript>":
   version: 4.3.5
   resolution: "typescript@patch:typescript@npm%3A4.3.5#~builtin<compat/typescript>::version=4.3.5&hash=d8b4e7"
   bin:
