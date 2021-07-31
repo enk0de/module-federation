@@ -1,6 +1,11 @@
 {
   "name": "host",
   "packageManager": "yarn@3.0.0",
+  "scripts": {
+    "start": "webpack serve --mode=development",
+    "build": "del -f build && webpack --mode=production",
+    "lint": "eslint --cache --report-unused-disable-directives ."
+  },
   "dependencies": {
     "@babel/runtime": "^7.14.8",
     "react": "^17.0.2",
