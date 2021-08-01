@@ -170,6 +170,7 @@ module.exports = function config(env, options) {
         shared: {
           react: { singleton: true },
           'react-dom': { singleton: true },
+          recoil: { singleton: true },
           shared: {
             import: '../shared/src/index',
             requiredVersion: require('../shared/package.json').version,
