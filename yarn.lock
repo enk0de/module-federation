@@ -4587,6 +4587,13 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
+"hamt_plus@npm:1.0.2":
+  version: 1.0.2
+  resolution: "hamt_plus@npm:1.0.2"
+  checksum: af26ea32db03009019cc83dfa9411521a2fa16079443de1a502c9be46d8b3c975acda8ed93fc5750ef08d3186d35901e2d8cfe717dd54bea67b358601fa74e4c
+  languageName: node
+  linkType: hard
+
 "handle-thing@npm:^2.0.0":
   version: 2.0.1
   resolution: "handle-thing@npm:2.0.1"
@@ -4725,6 +4732,7 @@ fsevents@~2.3.2:
     react: ^17.0.2
     react-dom: ^17.0.2
     react-refresh: ^0.10.0
+    recoil: ^0.4.0
     sass: ^1.35.2
     sass-loader: ^12.1.0
     style-loader: ^3.1.0
@@ -7175,6 +7183,22 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
+"recoil@npm:^0.4.0":
+  version: 0.4.0
+  resolution: "recoil@npm:0.4.0"
+  dependencies:
+    hamt_plus: 1.0.2
+  peerDependencies:
+    react: ">=16.13.1"
+  peerDependenciesMeta:
+    react-dom:
+      optional: true
+    react-native:
+      optional: true
+  checksum: e0bd5fdab82616a1b73eb337fe0c964bb6f324030bc56bd5cba337cb00445a32050bcd4d33f2259cf87bbed8bd33e4bc42be789f98464b7c04d39cebd6b8b9de
+  languageName: node
+  linkType: hard
+
 "redent@npm:^3.0.0":
   version: 3.0.0
   resolution: "redent@npm:3.0.0"
@@ -7322,6 +7346,7 @@ fsevents@~2.3.2:
     react: ^17.0.2
     react-dom: ^17.0.2
     react-refresh: ^0.10.0
+    recoil: ^0.4.0
     sass: ^1.35.2
     sass-loader: ^12.1.0
     style-loader: ^3.1.0
@@ -7374,6 +7399,7 @@ fsevents@~2.3.2:
     react: ^17.0.2
     react-dom: ^17.0.2
     react-refresh: ^0.10.0
+    recoil: ^0.4.0
     sass: ^1.35.2
     sass-loader: ^12.1.0
     style-loader: ^3.1.0
@@ -7834,6 +7860,7 @@ fsevents@~2.3.2:
     "@types/react-dom": ^17.0.9
     react: ^16.13.0
     react-dom: ^17.0.2
+    recoil: ^0.4.0
     typescript: ^4.2.4
   peerDependencies:
     react: ">=17.0"
