@@ -43,7 +43,8 @@ module.exports = function config(env, options) {
       pathinfo: isEnvDevelopment,
       filename: 'static/js/[name].[contenthash:8].js',
       chunkFilename: 'static/js/[name].[contenthash:8].js',
-      publicPath: 'auto'
+      publicPath: 'auto',
+      uniqueName: 'host'
     },
 
     devtool: isEnvProduction ? 'source-map' : 'cheap-module-source-map',
