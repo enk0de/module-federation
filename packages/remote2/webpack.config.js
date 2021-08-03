@@ -98,6 +98,7 @@ module.exports = function config(env, options) {
       new HtmlWebpackPlugin({
         inject: true,
         template: path.resolve(__dirname, 'public/index.html'),
+        chunks: ['main'],
         ...(isEnvProduction && {
           minify: {
             removeComments: true,
