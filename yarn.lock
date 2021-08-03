@@ -7865,6 +7865,7 @@ fsevents@~2.3.2:
   peerDependencies:
     react: ">=17.0"
     react-dom: ">=17.0"
+    recoil: ^0.4.0
   languageName: unknown
   linkType: soft
 
